@@ -1,0 +1,146 @@
+{
+  "version": "1",
+  "slide_count": 6,
+  "strip": { "width_px": 6480, "height_px": 1350, "panel_width_px": 1080 },
+  "copy_source": "carusel-memory/design/CAROUSEL_SLIDE_COPY.json",
+  "panels": [
+    {
+      "index": 1,
+      "role": "hook",
+      "pagination": "1/6",
+      "archetype": "hook_portrait",
+      "reference_slide": 1,
+      "zones": {
+        "pagination": { "position": "top-right", "text": "1/6" },
+        "headline": { "position": "top-left", "width_pct": 55, "lines": ["Депрессивная оптика", "видит правду"] },
+        "accent_rule": { "position": "below-headline", "width_px": 56, "color": "#3d5c2e" },
+        "portrait": { "position": "right", "width_pct": 42, "asset_id": "expert-portrait-hook", "optional_until_upload": true },
+        "accent_word": { "text": "правду", "color": "#3d5c2e" }
+      },
+      "verbatim_text": {
+        "imageTitle": "Депрессивная оптика",
+        "imageBody": "видит правду"
+      },
+      "scene": "Cream panel. Large Playfair headline left. Green accent on 'правду'. Expert portrait right if available. Motion-safe static text.",
+      "motion_safe": true
+    },
+    {
+      "index": 2,
+      "role": "pain",
+      "pagination": "2/6",
+      "archetype": "stat_insight",
+      "reference_slide": 2,
+      "composition_orient": true,
+      "zones": {
+        "pagination": { "position": "top-right", "text": "2/6" },
+        "headline": { "position": "top-left", "lines": ["ПРАВДА", "ДЕПРЕССИВНОГО", "ВЗГЛЯДА"] },
+        "accent_rule": { "position": "below-headline", "width_px": 48, "color": "#3d5c2e" },
+        "hero_phrase": { "position": "center-left", "text": "Будущее", "subtext": "непредсказуемо —", "third_line": "это факт", "color": "#3d5c2e", "size": "hero" },
+        "caption": { "position": "center-right", "text": "Умные прогнозы пугают — и не помогают встать с кровати", "max_chars": 80 },
+        "insight_pill": { "position": "bottom", "icon": "eye-line", "text": "Обжигающе честно — и совершенно не помогает", "fill": "#ede8e0" }
+      },
+      "verbatim_text": {
+        "imageTitle": "Правда депрессивного взгляда",
+        "imageBody": "Будущее непредсказуемо — это факт"
+      },
+      "scene": "EXACT slide-02 ref layout. Green replaces orange. Hero phrase instead of 53%. Bottom empathy pill."
+    },
+    {
+      "index": 3,
+      "role": "insight",
+      "pagination": "3/6",
+      "archetype": "numbered_icon_list",
+      "reference_slide": 3,
+      "zones": {
+        "pagination": { "position": "top-right", "text": "3/6" },
+        "index_number": { "text": "01", "color": "#3d5c2e", "underline": true },
+        "section_title": { "lines": ["ЗДОРОВОМУ", "МОЗГУ"] },
+        "hero_phrase": { "text": "нужна иллюзия", "subtext": "чтобы жить", "color": "#3d5c2e" },
+        "icon_list": [
+          { "icon": "postcard", "text": "открытки из будущего" },
+          { "icon": "house-float", "text": "домик в воздухе" },
+          { "icon": "spark", "text": "дофамин сейчас" },
+          { "icon": "shield", "text": "механизм выживания" }
+        ],
+        "divider": "horizontal rules between rows"
+      },
+      "verbatim_text": {
+        "imageTitle": "Здоровому мозгу",
+        "imageBody": "нужна иллюзия, чтобы жить"
+      },
+      "scene": "Ref slide-03 structure. Soft metaphor icons. No scary brain imagery."
+    },
+    {
+      "index": 4,
+      "role": "proof",
+      "pagination": "4/6",
+      "archetype": "icon_bullet_list",
+      "reference_slide": 8,
+      "zones": {
+        "pagination": { "position": "top-right", "text": "4/6" },
+        "headline": { "lines": ["НЕ ПЕРЕКРАШИВАТЬ", "А СОСУЩЕСТВОВАТЬ"] },
+        "accent_rule": { "width_px": 48 },
+        "hero_visual": { "type": "goya_etching_mini", "position": "left-mid", "size_pct": 25 },
+        "lead_block": { "icon": "palette-x", "text": "Розовые очки через силу — неестественно" },
+        "transition": "Другой путь:",
+        "x_list": [
+          "не перекрашивать реальность",
+          "найти точки без паралича",
+          "EMDR без розовых очков"
+        ]
+      },
+      "verbatim_text": {
+        "imageTitle": "Не перекрашивать",
+        "imageBody": "а сосуществовать с реальностью"
+      },
+      "scene": "Ref slide-08 list layout. Small Goya reference as line-art etching, not horror."
+    },
+    {
+      "index": 5,
+      "role": "save",
+      "pagination": "5/6",
+      "archetype": "multi_stat_rows",
+      "reference_slide": 7,
+      "zones": {
+        "pagination": { "position": "top-right", "text": "5/6" },
+        "headline": { "text": "ШКАЛА ОПТИКИ" },
+        "stat_rows": [
+          { "icon": "monochrome", "label": "Гойя", "sub": "без фильтров" },
+          { "icon": "postcard", "label": "Открытки", "sub": "всё наладится" },
+          { "icon": "heart-blind", "label": "Влюблённость", "sub": "рисков нет" },
+          { "icon": "balance", "label": "Середина", "sub": "микро-моменты" }
+        ],
+        "micro_moments": { "icons": ["radiator", "tea", "person"], "text": "Тепло · Чай · Рядом" },
+        "engagement": { "text": "Где вы сегодня?", "style": "muted" }
+      },
+      "verbatim_text": {
+        "imageTitle": "Шкала оптики",
+        "imageBody": "Гойя — открытки — середина"
+      },
+      "scene": "Ref slide-07 row layout. Save-worthy checklist. Four scale levels."
+    },
+    {
+      "index": 6,
+      "role": "cta",
+      "pagination": "6/6",
+      "archetype": "cta_portrait",
+      "reference_slide": 9,
+      "zones": {
+        "pagination": { "position": "top-right", "text": "6/6" },
+        "portrait": { "position": "left", "width_pct": 35, "asset_id": "expert-portrait-cta" },
+        "headline": { "lines": ["ПРОБНАЯ", "СЕССИЯ"] },
+        "accent_rule": { "width_px": 48 },
+        "detail_rows": [
+          { "icon": "clock", "text": "30 мин — бесплатно" },
+          { "icon": "video", "text": "онлайн" }
+        ],
+        "cta_pill": { "text": "Telegram @natalyamorozovabot", "sub": "или ссылка в bio →", "fill": "#ede8e0" }
+      },
+      "verbatim_text": {
+        "imageTitle": "Пробная сессия",
+        "imageBody": "30 мин — бесплатно, онлайн"
+      },
+      "scene": "Ref slide-09. Portrait left. Single CTA action. Warm professional."
+    }
+  ]
+}

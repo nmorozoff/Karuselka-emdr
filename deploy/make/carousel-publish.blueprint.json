@@ -1,0 +1,1447 @@
+{
+    "name": "Карусели: Cloud Run + Telegram + Instagram",
+    "flow": [
+        {
+            "id": 1,
+            "module": "airtable:ActionSearchRecords",
+            "version": 3,
+            "parameters": {
+                "__IMTCONN__": 13909814
+            },
+            "mapper": {
+                "base": "appQTNsDMuodYyp34",
+                "sort": [
+                    {
+                        "field": "Name"
+                    },
+                    {
+                        "field": "Описание карусели"
+                    }
+                ],
+                "view": "viwfyXtrUfA10JJah",
+                "table": "tblFWCmLCXLrOdKut",
+                "fields": [
+                    "Name",
+                    "Описание карусели",
+                    "TikTok заголовок",
+                    "TikTok описание"
+                ],
+                "maxRecords": "1",
+                "useColumnId": false
+            },
+            "metadata": {
+                "designer": {
+                    "x": 0,
+                    "y": 0,
+                    "name": "Карусель из Airtable"
+                },
+                "restore": {
+                    "expect": {
+                        "base": {
+                            "mode": "chose",
+                            "label": "Карусели инстаграм1"
+                        },
+                        "sort": {
+                            "mode": "chose",
+                            "items": [
+                                {
+                                    "field": {
+                                        "mode": "chose",
+                                        "label": "Name"
+                                    },
+                                    "direction": {
+                                        "mode": "chose",
+                                        "label": "Empty"
+                                    }
+                                },
+                                {
+                                    "field": {
+                                        "mode": "chose",
+                                        "label": "Описание карусели"
+                                    },
+                                    "direction": {
+                                        "mode": "chose",
+                                        "label": "Empty"
+                                    }
+                                }
+                            ]
+                        },
+                        "view": {
+                            "mode": "chose",
+                            "label": "Grid view"
+                        },
+                        "table": {
+                            "mode": "chose",
+                            "label": "Table 1"
+                        },
+                        "fields": {
+                            "mode": "chose",
+                            "label": [
+                                "Name",
+                                "Описание карусели"
+                            ]
+                        },
+                        "useColumnId": {
+                            "mode": "chose"
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "airtable3"
+                            },
+                            "label": "My Airtable OAuth connection (User ID: usr9U8MyoqkOvq8r0)"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:airtable3,airtable2",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "base",
+                        "type": "select",
+                        "label": "Base",
+                        "required": true
+                    },
+                    {
+                        "name": "useColumnId",
+                        "type": "boolean",
+                        "label": "Use Column ID",
+                        "required": true
+                    },
+                    {
+                        "name": "table",
+                        "type": "select",
+                        "label": "Table",
+                        "required": true
+                    },
+                    {
+                        "name": "formula",
+                        "type": "text",
+                        "label": "Formula"
+                    },
+                    {
+                        "name": "maxRecords",
+                        "type": "integer",
+                        "label": "Limit"
+                    },
+                    {
+                        "name": "sort",
+                        "spec": [
+                            {
+                                "name": "field",
+                                "type": "select",
+                                "label": "Field",
+                                "dynamic": true,
+                                "options": []
+                            },
+                            {
+                                "name": "direction",
+                                "type": "select",
+                                "label": "Direction",
+                                "options": [
+                                    {
+                                        "label": "Descending",
+                                        "value": "desc"
+                                    },
+                                    {
+                                        "label": "Ascending",
+                                        "value": "asc"
+                                    }
+                                ]
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Sort"
+                    },
+                    {
+                        "name": "view",
+                        "type": "select",
+                        "label": "View"
+                    },
+                    {
+                        "name": "fields",
+                        "type": "select",
+                        "label": "Output Fields",
+                        "multiple": true
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "__IMTLENGTH__",
+                        "type": "uinteger",
+                        "label": "Total number of bundles"
+                    },
+                    {
+                        "name": "__IMTINDEX__",
+                        "type": "uinteger",
+                        "label": "Bundle order position"
+                    },
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "createdTime",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "Name",
+                        "type": "text",
+                        "label": "Name"
+                    },
+                    {
+                        "name": "Описание карусели",
+                        "type": "text",
+                        "label": "Описание карусели",
+                        "multiline": true
+                    }
+                ]
+            }
+        },
+        {
+            "id": 2,
+            "module": "airtable:ActionSearchRecords",
+            "version": 3,
+            "parameters": {
+                "__IMTCONN__": 13909814
+            },
+            "mapper": {
+                "base": "appQTNsDMuodYyp34",
+                "sort": [
+                    {
+                        "field": "Name"
+                    },
+                    {
+                        "field": "Описание карусели"
+                    }
+                ],
+                "table": "tblfLD5ET7vvp1raT",
+                "fields": [
+                    "Track Name",
+                    "Audio Path",
+                    "Audio Start",
+                    "Audio End",
+                    "Reuse Audio Segment"
+                ],
+                "useColumnId": false,
+                "formula": "{Active}=1"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 0,
+                    "y": 250,
+                    "name": "Все активные треки (Airtable)"
+                },
+                "restore": {
+                    "expect": {
+                        "base": {
+                            "mode": "chose",
+                            "label": "Карусели инстаграм1"
+                        },
+                        "sort": {
+                            "mode": "chose",
+                            "items": [
+                                {
+                                    "field": {
+                                        "mode": "chose",
+                                        "label": "Name"
+                                    },
+                                    "direction": {
+                                        "mode": "chose",
+                                        "label": "Empty"
+                                    }
+                                },
+                                {
+                                    "field": {
+                                        "mode": "chose",
+                                        "label": "Описание карусели"
+                                    },
+                                    "direction": {
+                                        "mode": "chose",
+                                        "label": "Empty"
+                                    }
+                                }
+                            ]
+                        },
+                        "view": {
+                            "mode": "chose",
+                            "label": "Active"
+                        },
+                        "table": {
+                            "mode": "chose",
+                            "label": "Tracks"
+                        },
+                        "fields": {
+                            "mode": "chose",
+                            "label": [
+                                "Track Name",
+                                "Audio Path",
+                                "Audio Start",
+                                "Audio End",
+                                "Reuse Audio Segment"
+                            ]
+                        },
+                        "useColumnId": {
+                            "mode": "chose"
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "airtable3"
+                            },
+                            "label": "My Airtable OAuth connection (User ID: usr9U8MyoqkOvq8r0)"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:airtable3,airtable2",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "base",
+                        "type": "select",
+                        "label": "Base",
+                        "required": true
+                    },
+                    {
+                        "name": "useColumnId",
+                        "type": "boolean",
+                        "label": "Use Column ID",
+                        "required": true
+                    },
+                    {
+                        "name": "table",
+                        "type": "select",
+                        "label": "Table",
+                        "required": true
+                    },
+                    {
+                        "name": "formula",
+                        "type": "text",
+                        "label": "Formula"
+                    },
+                    {
+                        "name": "maxRecords",
+                        "type": "integer",
+                        "label": "Limit"
+                    },
+                    {
+                        "name": "sort",
+                        "spec": [
+                            {
+                                "name": "field",
+                                "type": "select",
+                                "label": "Field",
+                                "dynamic": true,
+                                "options": []
+                            },
+                            {
+                                "name": "direction",
+                                "type": "select",
+                                "label": "Direction",
+                                "options": [
+                                    {
+                                        "label": "Descending",
+                                        "value": "desc"
+                                    },
+                                    {
+                                        "label": "Ascending",
+                                        "value": "asc"
+                                    }
+                                ]
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Sort"
+                    },
+                    {
+                        "name": "view",
+                        "type": "select",
+                        "label": "View"
+                    },
+                    {
+                        "name": "fields",
+                        "type": "select",
+                        "label": "Output Fields",
+                        "multiple": true
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "__IMTLENGTH__",
+                        "type": "uinteger",
+                        "label": "Total number of bundles"
+                    },
+                    {
+                        "name": "__IMTINDEX__",
+                        "type": "uinteger",
+                        "label": "Bundle order position"
+                    },
+                    {
+                        "name": "id",
+                        "type": "text",
+                        "label": "ID"
+                    },
+                    {
+                        "name": "createdTime",
+                        "type": "date",
+                        "label": "Created Time"
+                    },
+                    {
+                        "name": "Name",
+                        "type": "text",
+                        "label": "Name"
+                    },
+                    {
+                        "name": "Описание карусели",
+                        "type": "text",
+                        "label": "Описание карусели",
+                        "multiline": true
+                    }
+                ]
+            }
+        },
+        {
+            "id": 13,
+            "module": "builtin:BasicAggregator",
+            "version": 1,
+            "parameters": {
+                "feeder": 2
+            },
+            "mapper": {
+                "Track Name": "{{2.`Track Name`}}",
+                "Audio Path": "{{2.`Audio Path`}}",
+                "Audio Start": "{{2.`Audio Start`}}",
+                "Audio End": "{{2.`Audio End`}}",
+                "Reuse Audio Segment": "{{2.`Reuse Audio Segment`}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 300,
+                    "y": 250,
+                    "name": "Собрать треки в массив"
+                },
+                "restore": {
+                    "extra": {
+                        "feeder": {
+                            "label": "Airtable - Search Records [2]"
+                        },
+                        "target": {
+                            "label": "Custom"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "id": 14,
+            "module": "util:SetVariable2",
+            "version": 1,
+            "parameters": {},
+            "mapper": {
+                "name": "track",
+                "scope": "roundtrip",
+                "value": "{{first(shuffle(13.array))}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 600,
+                    "y": 250,
+                    "name": "Случайный трек"
+                },
+                "restore": {
+                    "expect": {
+                        "scope": {
+                            "mode": "chose",
+                            "label": "One cycle"
+                        }
+                    }
+                },
+                "expect": [
+                    {
+                        "name": "name",
+                        "type": "text",
+                        "label": "Variable name",
+                        "required": true
+                    },
+                    {
+                        "name": "scope",
+                        "type": "select",
+                        "label": "Variable lifetime",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "roundtrip",
+                                "execution"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "value",
+                        "type": "any",
+                        "label": "Variable value"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "module": "dropbox:listAllFilesSubfoldersInFolder",
+            "version": 5,
+            "parameters": {
+                "__IMTCONN__": 13909648
+            },
+            "mapper": {
+                "list": "file",
+                "path": "/Content_Plan/{{1.Name}}",
+                "recursive": false,
+                "downloadable": false
+            },
+            "metadata": {
+                "designer": {
+                    "x": 300,
+                    "y": 0,
+                    "name": "Слайды из Dropbox"
+                },
+                "restore": {
+                    "expect": {
+                        "list": {
+                            "label": "Files"
+                        },
+                        "path": {
+                            "mode": "chose"
+                        },
+                        "recursive": {
+                            "mode": "chose"
+                        },
+                        "downloadable": {
+                            "mode": "chose"
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "dropbox"
+                            },
+                            "label": "My Dropbox connection (sviridova.hr1@gmail.com)"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:dropbox",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "list",
+                        "type": "select",
+                        "label": "List",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "file",
+                                "folder"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "path",
+                        "type": "folder",
+                        "label": "Folder"
+                    },
+                    {
+                        "name": "recursive",
+                        "type": "boolean",
+                        "label": "Recursive",
+                        "required": true
+                    },
+                    {
+                        "name": "limit",
+                        "type": "uinteger",
+                        "label": "Limit"
+                    },
+                    {
+                        "name": "downloadable",
+                        "type": "boolean",
+                        "label": "Show Only Downloadable Files",
+                        "required": true
+                    }
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "module": "builtin:BasicAggregator",
+            "version": 1,
+            "parameters": {
+                "feeder": 3
+            },
+            "mapper": {
+                "name": "{{3.name}}",
+                "path_lower": "{{3.path_lower}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 600,
+                    "y": 0,
+                    "name": "Собрать список слайдов"
+                },
+                "restore": {
+                    "extra": {
+                        "feeder": {
+                            "label": "Dropbox - List All Files/Subfolders In a Folder [3]"
+                        },
+                        "target": {
+                            "label": "Custom"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "id": 5,
+            "module": "builtin:BasicFeeder",
+            "version": 1,
+            "parameters": {},
+            "mapper": {
+                "array": "{{sort(4.array; \"asc\"; \"name\")}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 900,
+                    "y": 0,
+                    "name": "Итератор для Railway"
+                },
+                "restore": {
+                    "expect": {
+                        "array": {
+                            "mode": "edit"
+                        }
+                    }
+                },
+                "expect": [
+                    {
+                        "mode": "edit",
+                        "name": "array",
+                        "spec": [],
+                        "type": "array",
+                        "label": "Array"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 6,
+            "module": "builtin:BasicAggregator",
+            "version": 1,
+            "parameters": {
+                "feeder": 5
+            },
+            "mapper": {
+                "path_lower": "{{5.path_lower}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 1200,
+                    "y": 0,
+                    "name": "Собрать Dropbox paths"
+                },
+                "restore": {
+                    "extra": {
+                        "feeder": {
+                            "label": "Iterator [5]"
+                        },
+                        "target": {
+                            "label": "Custom"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "id": 7,
+            "module": "http:ActionSendData",
+            "version": 3,
+            "parameters": {
+                "handleErrors": true,
+                "useNewZLibDeCompress": true
+            },
+            "mapper": {
+                "url": "https://ai-carousel-renderer-861393245289.europe-west1.run.app/generate-carousel",
+                "serializeUrl": false,
+                "method": "post",
+                "headers": [
+                    {
+                        "name": "Accept",
+                        "value": "application/json"
+                    },
+                    {
+                        "name": "X-API-Key",
+                        "value": "YOUR_CLOUD_RUN_SERVICE_API_KEY"
+                    }
+                ],
+                "qs": [],
+                "bodyType": "raw",
+                "parseResponse": true,
+                "authUser": "",
+                "authPass": "",
+                "timeout": "300",
+                "shareCookies": false,
+                "ca": "",
+                "rejectUnauthorized": true,
+                "followRedirect": true,
+                "useQuerystring": false,
+                "gzip": true,
+                "useMtls": false,
+                "contentType": "application/json",
+                "data": "{\n  \"dropbox_image_paths\": {{map(6.array; \"path_lower\")}},\n  \"dropbox_audio_path\": \"{{14.track.`Audio Path`}}\",\n  \"audio_start\": {{14.track.`Audio Start`}},\n  \"audio_end\": {{14.track.`Audio End`}},\n  \"reuse_audio_segment\": {{14.track.`Reuse Audio Segment`}},\n  \"job_id\": \"{{1.Name}}\",\n  \"folder_name\": \"{{1.Name}}\",\n  \"output_folder\": \"/Ready_Carousel\"\n}",
+                "followAllRedirects": false
+            },
+            "metadata": {
+                "designer": {
+                    "x": 1500,
+                    "y": 0,
+                    "name": "Cloud Run: музыка + mp4"
+                },
+                "restore": {
+                    "expect": {
+                        "method": {
+                            "mode": "chose",
+                            "label": "POST"
+                        },
+                        "headers": {
+                            "mode": "chose",
+                            "items": [
+                                null
+                            ]
+                        },
+                        "qs": {
+                            "mode": "chose"
+                        },
+                        "bodyType": {
+                            "label": "Raw"
+                        },
+                        "contentType": {
+                            "label": "JSON (application/json)"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "handleErrors",
+                        "type": "boolean",
+                        "label": "Evaluate all states as errors (except for 2xx and 3xx )",
+                        "required": true
+                    },
+                    {
+                        "name": "useNewZLibDeCompress",
+                        "type": "hidden"
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "url",
+                        "type": "url",
+                        "label": "URL",
+                        "required": true
+                    },
+                    {
+                        "name": "serializeUrl",
+                        "type": "boolean",
+                        "label": "Serialize URL",
+                        "required": true
+                    },
+                    {
+                        "name": "method",
+                        "type": "select",
+                        "label": "Method",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "get",
+                                "head",
+                                "post",
+                                "put",
+                                "patch",
+                                "delete",
+                                "options"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "headers",
+                        "type": "array",
+                        "label": "Headers",
+                        "spec": [
+                            {
+                                "name": "name",
+                                "type": "text",
+                                "label": "Name",
+                                "required": true
+                            },
+                            {
+                                "name": "value",
+                                "type": "text",
+                                "label": "Value"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "qs",
+                        "type": "array",
+                        "label": "Query String",
+                        "spec": [
+                            {
+                                "name": "name",
+                                "type": "text",
+                                "label": "Name",
+                                "required": true
+                            },
+                            {
+                                "name": "value",
+                                "type": "text",
+                                "label": "Value"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "bodyType",
+                        "type": "select",
+                        "label": "Body type",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "raw",
+                                "x_www_form_urlencoded",
+                                "multipart_form_data"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "contentType",
+                        "type": "select",
+                        "label": "Content type",
+                        "validate": {
+                            "enum": [
+                                "text/plain",
+                                "application/json",
+                                "application/xml",
+                                "text/xml",
+                                "text/html",
+                                "custom"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "data",
+                        "type": "text",
+                        "label": "Request content"
+                    },
+                    {
+                        "name": "parseResponse",
+                        "type": "boolean",
+                        "label": "Parse response",
+                        "required": true
+                    }
+                ],
+                "interface": [
+                    {
+                        "name": "data",
+                        "type": "any",
+                        "label": "Data"
+                    },
+                    {
+                        "name": "headers",
+                        "type": "collection",
+                        "label": "Headers",
+                        "spec": []
+                    },
+                    {
+                        "name": "statusCode",
+                        "type": "number",
+                        "label": "Status code"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 8,
+            "module": "builtin:BasicFeeder",
+            "version": 1,
+            "parameters": {},
+            "mapper": {
+                "array": "{{sort(4.array; \"asc\"; \"name\")}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 900,
+                    "y": 300,
+                    "name": "Итератор для Telegram"
+                },
+                "restore": {
+                    "expect": {
+                        "array": {
+                            "mode": "edit"
+                        }
+                    }
+                },
+                "expect": [
+                    {
+                        "mode": "edit",
+                        "name": "array",
+                        "spec": [],
+                        "type": "array",
+                        "label": "Array"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 9,
+            "module": "dropbox:getFile",
+            "version": 5,
+            "parameters": {
+                "__IMTCONN__": 13909648
+            },
+            "mapper": {
+                "path": "{{8.path_lower}}",
+                "select": "map"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 1200,
+                    "y": 300,
+                    "name": "Скачать слайд для Telegram"
+                },
+                "restore": {
+                    "expect": {
+                        "select": {
+                            "label": "Map a file path"
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "dropbox"
+                            },
+                            "label": "My Dropbox connection (sviridova.hr1@gmail.com)"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:dropbox",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "select",
+                        "type": "select",
+                        "label": "Way of selecting files",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "map",
+                                "file"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "path",
+                        "type": "text",
+                        "label": "File Path",
+                        "required": true
+                    }
+                ]
+            }
+        },
+        {
+            "id": 10,
+            "module": "builtin:BasicAggregator",
+            "version": 1,
+            "parameters": {
+                "feeder": 8,
+                "target": "11.media"
+            },
+            "mapper": {
+                "type": "photo",
+                "value": "{{9.data}}",
+                "caption": "{{if(8.__IMTINDEX__ = 1; concat(1.Name; newline; 1.`Описание карусели`); emptystring)}}",
+                "filename": "{{9.fileName}}",
+                "sendType": "send_bydata",
+                "parseMode": ""
+            },
+            "metadata": {
+                "designer": {
+                    "x": 1500,
+                    "y": 300,
+                    "name": "Собрать альбом Telegram"
+                },
+                "restore": {
+                    "extra": {
+                        "feeder": {
+                            "label": "Iterator [8]"
+                        },
+                        "target": {
+                            "label": "Media"
+                        }
+                    },
+                    "expect": {
+                        "__IMTTARGET__": {
+                            "nested": {
+                                "type": {
+                                    "mode": "chose",
+                                    "label": "Photo"
+                                },
+                                "sendType": {
+                                    "label": "Data"
+                                },
+                                "parseMode": {
+                                    "mode": "chose",
+                                    "label": "Empty"
+                                }
+                            }
+                        }
+                    }
+                },
+                "expect": [
+                    {
+                        "name": "type",
+                        "type": "select",
+                        "label": "Media Type",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "photo",
+                                "video"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "caption",
+                        "type": "text",
+                        "label": "Caption"
+                    },
+                    {
+                        "name": "sendType",
+                        "type": "select",
+                        "label": "Send by",
+                        "required": true,
+                        "validate": {
+                            "enum": [
+                                "send_bydata",
+                                "send_byurl",
+                                "send_byid"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "filename",
+                        "type": "text",
+                        "label": "File Name",
+                        "required": true
+                    },
+                    {
+                        "name": "value",
+                        "type": "buffer",
+                        "label": "Data",
+                        "required": true
+                    },
+                    {
+                        "name": "parseMode",
+                        "type": "select",
+                        "label": "Parse Mode",
+                        "validate": {
+                            "enum": [
+                                "Markdown",
+                                "HTML"
+                            ]
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "id": 11,
+            "module": "telegram:SendMediaGroup",
+            "version": 1,
+            "parameters": {
+                "__IMTCONN__": 8061897
+            },
+            "mapper": {
+                "media": "{{10.array}}",
+                "chatId": "@rilsypsy",
+                "replyMarkup": "",
+                "messageThreadId": "",
+                "replyMarkupAssembleType": "reply_markup_enter"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 1800,
+                    "y": 300,
+                    "name": "Telegram без музыки"
+                },
+                "restore": {
+                    "expect": {
+                        "media": {
+                            "mode": "edit"
+                        },
+                        "replyMarkupAssembleType": {
+                            "label": "Enter the Reply Markup"
+                        }
+                    },
+                    "parameters": {
+                        "__IMTCONN__": {
+                            "data": {
+                                "scoped": "true",
+                                "connection": "telegram"
+                            },
+                            "label": "Bot канала РИЛСЫ"
+                        }
+                    }
+                },
+                "parameters": [
+                    {
+                        "name": "__IMTCONN__",
+                        "type": "account:telegram",
+                        "label": "Connection",
+                        "required": true
+                    }
+                ],
+                "expect": [
+                    {
+                        "name": "chatId",
+                        "type": "text",
+                        "label": "Chat ID",
+                        "required": true
+                    },
+                    {
+                        "name": "media",
+                        "spec": [
+                            {
+                                "name": "type",
+                                "type": "select",
+                                "label": "Media Type",
+                                "options": [
+                                    {
+                                        "label": "Photo",
+                                        "value": "photo",
+                                        "nested": [
+                                            {
+                                                "help": "To add a caption to the album, specify this parameter only in the first item of the array. Leave it empty in all the next medias.",
+                                                "name": "caption",
+                                                "type": "text",
+                                                "label": "Caption",
+                                                "required": false
+                                            },
+                                            {
+                                                "help": "Select if to send using data, by HTTP URL or by file ID.",
+                                                "name": "sendType",
+                                                "type": "select",
+                                                "label": "Send by",
+                                                "default": "send_bydata",
+                                                "options": [
+                                                    {
+                                                        "label": "Data",
+                                                        "value": "send_bydata",
+                                                        "nested": [
+                                                            {
+                                                                "help": "Enter a filename.",
+                                                                "name": "filename",
+                                                                "type": "text",
+                                                                "label": "File Name",
+                                                                "required": true,
+                                                                "semantic": "file:name"
+                                                            },
+                                                            {
+                                                                "help": "Map the content data.",
+                                                                "name": "value",
+                                                                "type": "buffer",
+                                                                "label": "Data",
+                                                                "required": true,
+                                                                "semantic": "file:data"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "label": "HTTP URL",
+                                                        "value": "send_byurl",
+                                                        "nested": [
+                                                            {
+                                                                "help": "Pass a URL to get a photo from the Internet and send it.",
+                                                                "name": "httpUrl",
+                                                                "type": "url",
+                                                                "label": "URL",
+                                                                "required": true
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "label": "File ID",
+                                                        "value": "send_byid",
+                                                        "nested": [
+                                                            {
+                                                                "help": "Pass a file ID to send a photo that exists on the Telegram servers.",
+                                                                "name": "fileId",
+                                                                "type": "text",
+                                                                "label": "File ID",
+                                                                "required": true
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "editable": false,
+                                                "required": true
+                                            },
+                                            {
+                                                "help": "Select Markdown-style or HTML-style of the text, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message.",
+                                                "name": "parseMode",
+                                                "type": "select",
+                                                "label": "Parse Mode",
+                                                "options": [
+                                                    {
+                                                        "label": "Markdown",
+                                                        "value": "Markdown"
+                                                    },
+                                                    {
+                                                        "label": "HTML",
+                                                        "value": "HTML"
+                                                    }
+                                                ],
+                                                "required": false
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "label": "Video",
+                                        "value": "video",
+                                        "nested": [
+                                            {
+                                                "help": "Enter the video caption.",
+                                                "name": "caption",
+                                                "type": "text",
+                                                "label": "Caption",
+                                                "required": false
+                                            },
+                                            {
+                                                "help": "Select if to send using data, by HTTP URL or by file ID.",
+                                                "name": "sendType",
+                                                "type": "select",
+                                                "label": "Send by",
+                                                "default": "send_bydata",
+                                                "options": [
+                                                    {
+                                                        "label": "Data",
+                                                        "value": "send_bydata",
+                                                        "nested": [
+                                                            {
+                                                                "help": "Enter a filename.",
+                                                                "name": "filename",
+                                                                "type": "text",
+                                                                "label": "File Name",
+                                                                "required": true,
+                                                                "semantic": "file:name"
+                                                            },
+                                                            {
+                                                                "help": "Map the content data.",
+                                                                "name": "value",
+                                                                "type": "buffer",
+                                                                "label": "Data",
+                                                                "required": true,
+                                                                "semantic": "file:data"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "label": "HTTP URL",
+                                                        "value": "send_byurl",
+                                                        "nested": [
+                                                            {
+                                                                "help": "Pass a URL to get a video from the Internet and send it.",
+                                                                "name": "httpUrl",
+                                                                "type": "url",
+                                                                "label": "URL",
+                                                                "required": true
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "label": "File ID",
+                                                        "value": "send_byid",
+                                                        "nested": [
+                                                            {
+                                                                "help": "Pass a file ID to send a video that exists on the Telegram servers.",
+                                                                "name": "fileId",
+                                                                "type": "text",
+                                                                "label": "File ID",
+                                                                "required": true
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "editable": false,
+                                                "required": true
+                                            },
+                                            {
+                                                "help": "Select Markdown-style or HTML-style of the text, if you want Telegram apps to show bold, italic, fixed-width text or inline URLs in your bot's message.",
+                                                "name": "parseMode",
+                                                "type": "select",
+                                                "label": "Parse Mode",
+                                                "options": [
+                                                    {
+                                                        "label": "Markdown",
+                                                        "value": "Markdown"
+                                                    },
+                                                    {
+                                                        "label": "HTML",
+                                                        "value": "HTML"
+                                                    }
+                                                ],
+                                                "required": false
+                                            },
+                                            {
+                                                "help": "Enter the duration of sent video in seconds.",
+                                                "name": "duration",
+                                                "type": "number",
+                                                "label": "Duration",
+                                                "advanced": true,
+                                                "required": false
+                                            },
+                                            {
+                                                "help": "Enter the video width.",
+                                                "name": "width",
+                                                "type": "number",
+                                                "label": "Width",
+                                                "advanced": true,
+                                                "required": false
+                                            },
+                                            {
+                                                "help": "Enter the video height.",
+                                                "name": "height",
+                                                "type": "number",
+                                                "label": "Height",
+                                                "advanced": true,
+                                                "required": false
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "required": true
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Media",
+                        "required": true,
+                        "validate": {
+                            "minItems": 2
+                        }
+                    },
+                    {
+                        "name": "messageThreadId",
+                        "type": "number",
+                        "label": "Message Thread ID"
+                    },
+                    {
+                        "name": "disableNotification",
+                        "type": "boolean",
+                        "label": "Disable Notifications"
+                    },
+                    {
+                        "name": "replyMarkupAssembleType",
+                        "type": "select",
+                        "label": "Enter/Assemble the Reply Markup Field",
+                        "validate": {
+                            "enum": [
+                                "reply_markup_enter",
+                                "reply_markup_assemble"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "replyMarkup",
+                        "type": "text",
+                        "label": "Reply Markup"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 12,
+            "module": "builtin:BasicAggregator",
+            "version": 1,
+            "parameters": {
+                "feeder": 5
+            },
+            "mapper": {
+                "video_url": "{{7.data.videos[5.__IMTINDEX__]}}"
+            },
+            "metadata": {
+                "designer": {
+                    "x": 1800,
+                    "y": -180,
+                    "name": "Заглушка: URLs для Instagram"
+                },
+                "restore": {
+                    "extra": {
+                        "feeder": {
+                            "label": "Iterator [5]"
+                        },
+                        "target": {
+                            "label": "Custom"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "metadata": {
+        "instant": false,
+        "version": 1,
+        "scenario": {
+            "roundtrips": 1,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "autoCommitTriggerLast": true,
+            "sequential": false,
+            "slots": null,
+            "confidential": false,
+            "dataloss": false,
+            "dlq": false,
+            "freshVariables": false
+        },
+        "designer": {
+            "orphans": []
+        },
+        "zone": "eu2.make.com",
+        "notes": [
+            "Импорт: Scenarios → ⋯ → Import Blueprint. Замени YOUR_CLOUD_RUN_SERVICE_API_KEY в модуле 7.",
+            "TikTok/Zernio и Instagram — донастроить вручную после импорта (см. deploy/make/README.md)."
+        ]
+    }
+}

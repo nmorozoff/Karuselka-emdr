@@ -1,0 +1,142 @@
+{
+  "source_url": "https://www.instagram.com/p/DbFiu0pCp2k/",
+  "source_author": "@yura.muradyan",
+  "source_slug": "DbFiu0pCp2k",
+  "composition_orient": {
+    "slide_index": 2,
+    "img_index": 2,
+    "media_path": "carusel-memory/research/competitor-decompose/DbFiu0pCp2k/media/slide-02.jpg",
+    "why": "Эталон вертикальной иерархии: headline block → accent rule → hero stat left + caption right → bottom insight pill with icon"
+  },
+  "reference_role": {
+    "style": "editorial infographic, light cream matte, premium calm",
+    "layout": "left-aligned text columns, generous whitespace, icon circles, rounded pills",
+    "typography": "bold geometric sans all-caps headlines, light pagination, large stat numerals",
+    "mood": "professional education, B2B trust, not playful social",
+    "content_inspiration": "numbered series, stat blocks, list slides — adapted to psychology metaphors"
+  },
+  "palette_reference": {
+    "background": "#f5f0eb",
+    "text_primary": "#1a1a1a",
+    "text_muted": "#9a9a9a",
+    "accent_orange": "#e85d2c",
+    "surface_pill": "#ede8e0",
+    "icon_circle": "#e8e2d8"
+  },
+  "palette_brand_override": {
+    "background": "#f7f5ef",
+    "text_primary": "#1a1a1a",
+    "accent": "#3d5c2e",
+    "accent_secondary": "#6b8f5a",
+    "surface_pill": "#ede8e0"
+  },
+  "typography_reference": {
+    "headline": "bold sans-serif, ALL CAPS, tight leading",
+    "stat": "extra-bold sans, accent color, left column",
+    "body": "regular sans, smaller, left-aligned",
+    "pagination": "light weight, top-right, gray"
+  },
+  "typography_brand_override": {
+    "headline": "Playfair Display 700-800",
+    "body": "Inter 400-600",
+    "stat": "Inter 800 or Bebas Neue Cyrillic for single emphasis",
+    "pagination": "Inter 400"
+  },
+  "layout_zones_per_archetype": {
+    "hook_portrait": {
+      "reference_slides": [1],
+      "zones": ["headline_left", "accent_rule", "subhook", "portrait_right_40pct"]
+    },
+    "stat_insight": {
+      "reference_slides": [2],
+      "zones": ["pagination_tr", "headline_tl", "accent_rule", "hero_stat_left", "stat_caption_right", "insight_pill_bottom"]
+    },
+    "numbered_icon_list": {
+      "reference_slides": [3, 4],
+      "zones": ["pagination_tr", "index_number_accent", "section_title", "hero_stat", "icon_list_rows", "source_footnote_optional"]
+    },
+    "multi_stat_rows": {
+      "reference_slides": [7],
+      "zones": ["headline_tl", "stat_row_icon_number_text", "repeated_3x"]
+    },
+    "icon_bullet_list": {
+      "reference_slides": [8],
+      "zones": ["pagination_tr", "headline_tl", "lead_icon_text", "accent_rule", "transition_line", "x_icon_list"]
+    },
+    "cta_portrait": {
+      "reference_slides": [9],
+      "zones": ["pagination_tr", "portrait_left_35pct", "headline_right", "accent_rule", "detail_icons", "cta_pill_bottom"]
+    }
+  },
+  "preserve": [
+    "cream matte full-bleed background",
+    "left-aligned editorial hierarchy",
+    "pagination N/M top-right in muted gray",
+    "short horizontal accent rule under headline",
+    "large hero stat or key phrase in brand accent color",
+    "rounded insight/CTA pills with subtle surface fill",
+    "line-art icons in light circles",
+    "expert portrait on hook and CTA slides",
+    "calm premium spacing (~8% margins)",
+    "icon-led lists with horizontal dividers"
+  ],
+  "change": [
+    "orange accent → brand green #3d5c2e",
+    "sans-only headlines → Playfair Display for headlines",
+    "9 slides → 6 slides strip 4:5",
+    "ZOH stats → psychology metaphors (optics, Goya, postcards)",
+    "webinar CTA → free 30min EMDR trial session",
+    "competitor face → Natalia Morozova portrait from Референсы/",
+    "Kie 3x3 grid → Runware horizontal strip 6480×1350"
+  ],
+  "do_not_borrow": [
+    "@yura.muradyan face and body",
+    "PRADA logo on t-shirt",
+    "ZOH / fitness / VCIOM copy and percentages",
+    "orange as primary accent",
+    "competitor webinar date and registration text",
+    "stock coaching clichés"
+  ],
+  "panel_archetype_map": {
+    "01": {
+      "role": "hook",
+      "reference_slide": 1,
+      "archetype": "hook_portrait",
+      "headline_on_image": ["Депрессивная оптика", "видит правду"]
+    },
+    "02": {
+      "role": "pain",
+      "reference_slide": 2,
+      "archetype": "stat_insight",
+      "composition_orient": true,
+      "headline_on_image": ["Правда депрессивного взгляда", "Будущее непредсказуемо — это факт"]
+    },
+    "03": {
+      "role": "insight",
+      "reference_slide": 3,
+      "archetype": "numbered_icon_list",
+      "headline_on_image": ["Здоровому мозгу", "нужна иллюзия, чтобы жить"]
+    },
+    "04": {
+      "role": "proof",
+      "reference_slide": 8,
+      "archetype": "icon_bullet_list",
+      "headline_on_image": ["Не перекрашивать", "а сосуществовать с реальностью"]
+    },
+    "05": {
+      "role": "save",
+      "reference_slide": 7,
+      "archetype": "multi_stat_rows",
+      "headline_on_image": ["Шкала оптики", "Гойя — открытки — середина"]
+    },
+    "06": {
+      "role": "cta",
+      "reference_slide": 9,
+      "archetype": "cta_portrait",
+      "headline_on_image": ["Пробная сессия", "30 мин — бесплатно, онлайн"]
+    }
+  },
+  "thumbnail_test": "Slide-01: large Playfair hook + green accent word on cream; portrait silhouette optional right — readable at 200px width",
+  "save_test": "Slide-05 checklist scale + micro-moments — screenshot-friendly framework card",
+  "adaptation_notes": "Reference has 9 infographic slides; we compress narrative arc to 6 while keeping slide-02 composition DNA on pain slide and distributing list/stat archetypes across insight/proof/save"
+}

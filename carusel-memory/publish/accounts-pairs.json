@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "description": "Две пары IG+TikTok. Pair1 = стили natasha (ротация). Pair2 = Минимализм.",
+  "schedule": {
+    "carousels_per_day_per_pair": 3,
+    "make_interval_minutes": 480,
+    "note": "Make: 3 запуска в день на пару = каждые ~8ч или 3 отдельных сценария по расписанию"
+  },
+  "pair1": {
+    "id": "pair1",
+    "label": "Инста1 + TikTok1 (natasha styles)",
+    "instagram_account": "pair1_instagram",
+    "tiktok_account": "pair1_tiktok",
+    "zernio_instagram_account_id": "6a3b7aae9d9472faaecf24f5",
+    "zernio_tiktok_account_id": "6a37de5c5f7d1751ab2d389e",
+    "dropbox_root": "/Content_Plan/Pair1",
+    "airtable": {
+      "base_id": "appQTNsDMuodYyp34",
+      "table_id": "tblFWCmLCXLrOdKut",
+      "fields": {
+        "name": "Name",
+        "instagram_caption": "Описание карусели",
+        "tiktok_title": "TikTok заголовок",
+        "tiktok_description": "TikTok описание",
+        "folder_path": "Dropbox Path"
+      }
+    },
+    "make_scenario_name": "Karuselka Publish Pair1",
+    "make_scenario_id": "9572762",
+    "style_rotation": [
+      "expert-light",
+      "expert-dark",
+      "storytelling"
+    ]
+  },
+  "pair2": {
+    "id": "pair2",
+    "label": "Инста2 + TikTok2 (Минимализм)",
+    "instagram_account": "FILL_ME",
+    "tiktok_account": "FILL_ME",
+    "zernio_tiktok_account_id": "FILL_ME",
+    "dropbox_root": "/Content_Plan/Pair2",
+    "airtable": {
+      "base_id": "appQTNsDMuodYyp34",
+      "table_id": "tbl2zotNwOmWLSTyC",
+      "fields": {
+        "name": "Name",
+        "instagram_caption": "Описание карусели",
+        "tiktok_title": "TikTok заголовок",
+        "tiktok_description": "TikTok описание",
+        "folder_path": "Dropbox Path"
+      }
+    },
+    "make_scenario_name": "Karuselka Publish Pair2",
+    "style_fixed": "minimalism"
+  },
+  "natasha_reference": {
+    "project_path": "/Users/natala/Documents/Playground/ai-carousel-natasha",
+    "make_blueprints": "deploy/make/carousel-publish.blueprint.json",
+    "airtable_example_base": "appQTNsDMuodYyp34",
+    "airtable_example_table_pair1": "tblFWCmLCXLrOdKut"
+  }
+}

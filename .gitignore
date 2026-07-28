@@ -1,0 +1,24 @@
+# Secrets
+.env
+carusel-memory/*.env.local
+carusel-memory/**/*.env.local
+deploy/cloud-worker/.env.deploy
+deploy/cloud-worker/.env.deploy.yaml
+deploy/cloud-worker/app/
+
+# Python
+.venv/
+**/__pycache__/
+*.py[cod]
+
+# Runtime output (publish logs, worker runs)
+carusel-memory/output/
+
+# Local venvs / heavy deps
+hyperion-reels/
+
+# Reference clone (отдельный git)
+Karuselka/
+
+.DS_Store
+.cursor/

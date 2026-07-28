@@ -1,0 +1,245 @@
+{
+  "version": "1",
+  "generation_mode": "strip_6",
+  "model": "openai:gpt-image@2",
+  "width": 6480,
+  "height": 1350,
+  "slide_width": 1080,
+  "slide_height": 1350,
+  "slide_count": 6,
+  "quality": "medium",
+  "aspect_ratio": "4.8:1",
+  "panel_aspect": "4:5",
+  "prompt": "[STYLE LOCK]\nОдно изображение — превью Instagram-карусели: ровно 6 равных вертикальных панелей в одной горизонтальной полосе слева направо.\nКаждая панель — отдельный слайд 4:5 (1080×1350 после нарезки).\nСтиль как на референсе @yura.muradyan (DbFiu0pCp2k): editorial infographic, кремовый matte фон #f7f5ef, Playfair Display заголовки, Inter body, левое выравнивание, поля ~8%, спокойный премиальный B2B-education тон.\nАкцент #3d5c2e вместо оранжевого референса. Line-art иконки в светлых кругах #ede8e0. Полноразмерный фон edge-to-edge. Без Instagram UI, без рамки телефона.\n\n[REFERENCE CONTRACT]\nРоль референса: style + layout reference (@yura.muradyan).\nСохранить: кремовый matte фон, иерархию slide-02 (headline → accent rule → hero phrase → insight pill), пагинацию N/6 top-right, крупную типографику hook, icon-led lists, rounded insight/CTA pills, портрет эксперта на hook и CTA, calm premium spacing.\nИзменить: тема → депрессивная оптика / EMDR; палитра #3d5c2e/#f7f5ef; Playfair+Inter; 6 панелей strip; метафоры Гойя/открытки; CTA пробная сессия Telegram.\nНе копировать: лицо @yura.muradyan, PRADA/ZOH/ВЦИОМ тексты, оранжевый primary, вебинар конкурента.\nIdentity: лицо Натальи Морозовой из reference photo — профессиональный портрет, тёплый экспертный вид.\n\n[OUTPUT FORMAT]\nMaster 6480×1350 px, 6 equal vertical panels in one row.\nReading order left to right: 01 → 02 → 03 → 04 → 05 → 06.\nНевидимые линии разреза на 1/6…5/6 — без белых gutters, без рамок между панелями.\nКаждая панель — самостоятельный слайд, единый визуальный язык серии.\n\n[TYPOGRAPHY]\nРендерить ТОЛЬКО точный текст в кавычках из блока PANELS.\nVerbatim text; no substitutions; no extra labels; no duplicate text.\nИерархия: headline > short body > pill/CTA. Высокий контраст, щедрые поля.\nТекст — не ближе 10–12% к линии разреза и краям панели. Только русский. Без emoji.\n\n[PANELS — row 01..06]\nПанель 1 (hook, motion-safe): «1/6»; «Депрессивная оптика»; «видит правду» (слово «правду» #3d5c2e); зелёная черта 56px; портрет Натальи справа 42%; motion-safe статичный текст.\nПанель 2 (pain, composition orient): «2/6»; «ПРАВДА» «ДЕПРЕССИВНОГО» «ВЗГЛЯДА»; зелёная черта; hero слева «Будущее» «непредсказуемо —» «это факт» (#3d5c2e крупно); справа «Умные прогнозы пугают — и не помогают встать с кровати»; нижняя pill с иконкой глаза «Обжигающе честно — и совершенно не помогает».\nПанель 3 (insight): «3/6»; индекс «01» зелёный; «ЗДОРОВОМУ» «МОЗГУ»; «нужна иллюзия» «чтобы жить»; icon list: «открытки из будущего», «домик в воздухе», «дофамин сейчас», «механизм выживания».\nПанель 4 (proof): «4/6»; «НЕ ПЕРЕКРАШИВАТЬ» «А СОСУЩЕСТВОВАТЬ»; мини-гравюра Гойи line-art; «Розовые очки через силу — неестественно»; «Другой путь:»; X-list: «не перекрашивать реальность», «найти точки без паралича», «EMDR без розовых очков».\nПанель 5 (save): «5/6»; «ШКАЛА ОПТИКИ»; 4 ряда: «Гойя»/«без фильтров», «Открытки»/«всё наладится», «Влюблённость»/«рисков нет», «Середина»/«микро-моменты»; «Тепло · Чай · Рядом»; «Где вы сегодня?».\nПанель 6 (cta): «6/6»; портрет Натальи слева 35%; «ПРОБНАЯ» «СЕССИЯ»; зелёная черта; «30 мин — бесплатно», «онлайн»; CTA pill «Telegram @natalyamorozovabot» «или ссылка в bio →».\n\n[NEGATIVE]\nwrong panel count, 9 panels, 3x3 grid, 2x3 grid, vertical stack, visible gutters, white borders, outer frame, watermark, blurry text, style drift, unreadable Cyrillic, duplicate labels, cropped text, English UI labels, orange accent, competitor ZOH text, stock happy people, horror Goya, neon, emoji.\n\n[TOPIC]\nДепрессивная оптика vs розовые очки — правда, иллюзия и как жить без паралича. Акцент #3d5c2e. Фон #f7f5ef.",
+  "negative_prompt": "wrong panel count, 9 panels, 3x3 grid, 2x3 grid, vertical stack, visible gutters, white borders, outer frame, watermark, blurry text, style drift, unreadable Cyrillic, duplicate labels, cropped text, English UI labels, orange accent, competitor ZOH PRADA VCIOM text, stock happy people, horror Goya, neon, emoji, yura.muradyan face, clinical white background, dense paragraphs",
+  "input_urls": [],
+  "input_local_paths": [
+    {
+      "role": "style_layout_anchor",
+      "path": "carusel-memory/research/competitor-decompose/DbFiu0pCp2k/media/slide-02.jpg",
+      "notes": "Composition orient — stat_insight archetype"
+    },
+    {
+      "role": "layout_hook",
+      "path": "carusel-memory/research/competitor-decompose/DbFiu0pCp2k/media/slide-01.jpg",
+      "notes": "Hook portrait layout reference"
+    },
+    {
+      "role": "layout_cta",
+      "path": "carusel-memory/research/competitor-decompose/DbFiu0pCp2k/media/slide-09.jpg",
+      "notes": "CTA portrait layout reference"
+    },
+    {
+      "role": "identity_primary",
+      "path": "Референсы/0C2A3279.jpg",
+      "notes": "Наталья Морозова — primary portrait for slide-01 and slide-06 i2i"
+    },
+    {
+      "role": "identity_fallback",
+      "path": "Референсы/0C2A3302.jpg",
+      "notes": "Запасной портрет эксперта"
+    }
+  ],
+  "reference_upload_note": "Runware slice: загрузить input_local_paths → HTTPS перед генерацией; primary style anchor = slide-02.jpg",
+  "grid": {
+    "cols": 6,
+    "rows": 1,
+    "order": "row-major"
+  },
+  "animate_slide": 1,
+  "reference_contract": {
+    "reference_role": "style + layout reference",
+    "reference_url": "https://www.instagram.com/p/DbFiu0pCp2k/",
+    "reference_author": "@yura.muradyan",
+    "composition_orient": "slide-02 (stat_insight archetype)",
+    "preserve": [
+      "cream matte full-bleed background #f7f5ef",
+      "left-aligned editorial hierarchy",
+      "pagination N/6 top-right muted gray",
+      "short horizontal accent rule #3d5c2e under headline",
+      "large hero phrase in brand accent color",
+      "rounded insight/CTA pills with surface fill #ede8e0",
+      "line-art icons in light circles",
+      "expert portrait on hook (right) and CTA (left)",
+      "calm premium spacing ~8% margins",
+      "icon-led lists with horizontal dividers",
+      "slide-02 layout DNA on panel 2"
+    ],
+    "change": [
+      "orange accent → brand green #3d5c2e",
+      "sans-only headlines → Playfair Display + Inter",
+      "9 slides → 6-panel horizontal strip 6480×1350",
+      "ZOH/fitness topic → depressive optics / EMDR psychology",
+      "competitor face → Natalia Morozova from Референсы/0C2A3279.jpg",
+      "webinar CTA → free 30min trial Telegram @natalyamorozovabot",
+      "Kie 3×3 grid → Runware strip_6"
+    ],
+    "do_not_borrow": [
+      "@yura.muradyan face and body",
+      "PRADA logo",
+      "ZOH / fitness / VCIOM copy and percentages",
+      "orange as primary accent",
+      "competitor webinar date and registration text",
+      "stock coaching clichés",
+      "red anxiety banners",
+      "neon and emoji spam"
+    ]
+  },
+  "style_lock": {
+    "carousel_family": "slide_numbered_series",
+    "secondary_family": "stat_blocks",
+    "background": "#f7f5ef",
+    "primary_accent": "#3d5c2e",
+    "primary_dark": "#2d4522",
+    "text_primary": "#1a1a1a",
+    "text_muted": "#5c5c5c",
+    "pagination_color": "#9a9a9a",
+    "surface_pill": "#ede8e0",
+    "icon_circle": "#e8e2d8",
+    "outline": "#d4cfc5",
+    "headline_font": "Playfair Display 700-800",
+    "body_font": "Inter 400-600",
+    "stat_font": "Inter 800",
+    "mood": "calm premium psychology editorial, not clinical, not motivational neon",
+    "lighting": "flat matte, no gradient insta-spots",
+    "illustration_style": "soft line-art metaphors — postcards, Goya etching miniature, brain illusion, no horror"
+  },
+  "prompt_compaction": {
+    "active_prompt_max_chars": 4500,
+    "details_in_structured_fields": true,
+    "prompt_compacted": true,
+    "prompt_char_count": 3596,
+    "prompt_compacted_reason": "initial build — details in reference_contract, style_lock, panel_visual_brief"
+  },
+  "typography_rules": {
+    "exact_text": true,
+    "no_extra_text": true,
+    "no_substitutions": true,
+    "no_duplicate_text": true,
+    "language": "ru",
+    "no_emoji": true,
+    "hierarchy": "headline > short body > pill/CTA",
+    "safe_margin_pct": "10-12",
+    "max_visible_chars_per_panel": 120,
+    "headline_style": "ALL CAPS for hook/pain lines; sentence case for empathetic subcopy",
+    "verbatim_source": "carusel-memory/design/CAROUSEL_SLIDE_COPY.json + CAROUSEL_SLIDE_BLUEPRINTS.json"
+  },
+  "panel_visual_brief": [
+    {
+      "slide": 1,
+      "role": "hook",
+      "archetype": "hook_portrait",
+      "reference_slide": 1,
+      "motion_safe": true,
+      "verbatim_text": {
+        "pagination": "1/6",
+        "imageTitle": "Депрессивная оптика",
+        "imageBody": "видит правду",
+        "accent_word": "правду"
+      },
+      "visual_only": "Cream panel. Playfair headline top-left 55% width. Green accent on «правду». Short green rule 56px. Expert portrait Natalia Morozova right 42% — warm professional, from identity reference. Static text for motion. No busy background."
+    },
+    {
+      "slide": 2,
+      "role": "pain",
+      "archetype": "stat_insight",
+      "reference_slide": 2,
+      "composition_orient": true,
+      "verbatim_text": {
+        "pagination": "2/6",
+        "imageTitle": "Правда депрессивного взгляда",
+        "imageBody": "Будущее непредсказуемо — это факт",
+        "headline_caps": ["ПРАВДА", "ДЕПРЕССИВНОГО", "ВЗГЛЯДА"],
+        "hero_phrase": ["Будущее", "непредсказуемо —", "это факт"],
+        "caption": "Умные прогнозы пугают — и не помогают встать с кровати",
+        "insight_pill": "Обжигающе честно — и совершенно не помогает"
+      },
+      "visual_only": "EXACT ref slide-02 layout. Green replaces orange. Hero phrase left column large #3d5c2e. Empathy caption right. Bottom rounded pill #ede8e0 with eye line-icon."
+    },
+    {
+      "slide": 3,
+      "role": "insight",
+      "archetype": "numbered_icon_list",
+      "reference_slide": 3,
+      "verbatim_text": {
+        "pagination": "3/6",
+        "index": "01",
+        "imageTitle": "Здоровому мозгу",
+        "imageBody": "нужна иллюзия, чтобы жить",
+        "icon_list": [
+          "открытки из будущего",
+          "домик в воздухе",
+          "дофамин сейчас",
+          "механизм выживания"
+        ]
+      },
+      "visual_only": "Ref slide-03 structure. Green underlined «01». Section title caps. Soft metaphor icons — postcard, floating house, spark, shield. Horizontal dividers between rows. No scary brain imagery."
+    },
+    {
+      "slide": 4,
+      "role": "proof",
+      "archetype": "icon_bullet_list",
+      "reference_slide": 8,
+      "verbatim_text": {
+        "pagination": "4/6",
+        "imageTitle": "Не перекрашивать",
+        "imageBody": "а сосуществовать с реальностью",
+        "headline_caps": ["НЕ ПЕРЕКРАШИВАТЬ", "А СОСУЩЕСТВОВАТЬ"],
+        "lead": "Розовые очки через силу — неестественно",
+        "transition": "Другой путь:",
+        "x_list": [
+          "не перекрашивать реальность",
+          "найти точки без паралича",
+          "EMDR без розовых очков"
+        ]
+      },
+      "visual_only": "Ref slide-08 list layout. Small Goya etching line-art left-mid 25% — monochrome, not horror. Palette-x lead icon. Three X-icon bullet rows. Green accent rule."
+    },
+    {
+      "slide": 5,
+      "role": "save",
+      "archetype": "multi_stat_rows",
+      "reference_slide": 7,
+      "verbatim_text": {
+        "pagination": "5/6",
+        "imageTitle": "Шкала оптики",
+        "imageBody": "Гойя — открытки — середина",
+        "headline": "ШКАЛА ОПТИКИ",
+        "scale_rows": [
+          { "label": "Гойя", "sub": "без фильтров" },
+          { "label": "Открытки", "sub": "всё наладится" },
+          { "label": "Влюблённость", "sub": "рисков нет" },
+          { "label": "Середина", "sub": "микро-моменты" }
+        ],
+        "micro_moments": "Тепло · Чай · Рядом",
+        "engagement": "Где вы сегодня?"
+      },
+      "visual_only": "Ref slide-07 four-row stat layout. Icon per row — monochrome, postcard, heart-blind, balance. Micro-moment icons radiator/tea/person bottom. Save-worthy checklist card. Muted engagement question."
+    },
+    {
+      "slide": 6,
+      "role": "cta",
+      "archetype": "cta_portrait",
+      "reference_slide": 9,
+      "verbatim_text": {
+        "pagination": "6/6",
+        "imageTitle": "Пробная сессия",
+        "imageBody": "30 мин — бесплатно, онлайн",
+        "headline_caps": ["ПРОБНАЯ", "СЕССИЯ"],
+        "details": ["30 мин — бесплатно", "онлайн"],
+        "cta_pill": "Telegram @natalyamorozovabot",
+        "cta_sub": "или ссылка в bio →"
+      },
+      "visual_only": "Ref slide-09. Portrait Natalia Morozova left 35% from identity reference. Right: session headline, green rule, clock/video detail rows, rounded CTA pill #ede8e0. Single action warm professional."
+    }
+  ],
+  "topic": "Депрессивная оптика vs розовые очки — правда, иллюзия и как жить без паралича",
+  "expert": "Наталья Морозова",
+  "slice_script": "Karuselka/scripts/slice_carousel.py",
+  "runware_env": {
+    "width_override": 6480,
+    "height_override": 1350,
+    "quality": "medium",
+    "model": "openai:gpt-image@2"
+  }
+}

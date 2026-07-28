@@ -1,0 +1,60 @@
+{
+  "shapes": [
+    {
+      "id": "accent-rule-horizontal",
+      "type": "line",
+      "dimensions_px": { "width": 48, "height": 3 },
+      "color": "#3d5c2e",
+      "usage": "below headlines slides 1-4, 6",
+      "reference": "DbFiu0pCp2k slide-02 orange rule"
+    },
+    {
+      "id": "insight-pill-rounded",
+      "type": "rounded-rect",
+      "radius_px": 16,
+      "fill": "#ede8e0",
+      "padding_px": 24,
+      "usage": "slide-02 empathy box, slide-06 CTA card",
+      "reference": "ref slide-02 bottom pill, slide-09 CTA"
+    },
+    {
+      "id": "icon-circle",
+      "type": "circle",
+      "diameter_px": 48,
+      "fill": "#e8e2d8",
+      "stroke": "none",
+      "usage": "icon list rows slides 3, 5, 7-ref"
+    },
+    {
+      "id": "list-divider",
+      "type": "line",
+      "dimensions_px": { "width": "full-minus-margin", "height": 1 },
+      "color": "#d4cfc5",
+      "usage": "between icon list items slide 3, 4, 5"
+    },
+    {
+      "id": "x-marker-circle",
+      "type": "circle",
+      "diameter_px": 28,
+      "stroke": "#1a1a1a",
+      "stroke_width_px": 1.5,
+      "usage": "bullet list slide 4 (ref slide-08)"
+    },
+    {
+      "id": "pagination-text",
+      "type": "text-badge",
+      "position": "top-right",
+      "font": "Inter 400",
+      "color": "#9a9a9a",
+      "usage": "all slides 1/6 through 6/6"
+    }
+  ],
+  "panel_shape_map": {
+    "01": ["accent-rule-horizontal", "pagination-text"],
+    "02": ["accent-rule-horizontal", "insight-pill-rounded", "icon-circle", "pagination-text"],
+    "03": ["icon-circle", "list-divider", "pagination-text"],
+    "04": ["accent-rule-horizontal", "x-marker-circle", "list-divider", "pagination-text"],
+    "05": ["icon-circle", "list-divider", "pagination-text"],
+    "06": ["accent-rule-horizontal", "insight-pill-rounded", "pagination-text"]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "minimum_meaningful_image_assets": 6,
+  "zones": [
+    {
+      "id": "slide-01-headline",
+      "slide": 1,
+      "type": "typography",
+      "source_has_image": true,
+      "required_for_fidelity": true,
+      "implementation": "generated-in-strip",
+      "status": "ready"
+    },
+    {
+      "id": "slide-01-portrait",
+      "slide": 1,
+      "type": "photo",
+      "source_has_image": true,
+      "required_for_fidelity": false,
+      "implementation": "runware-i2i",
+      "asset_registry_id": "expert-portrait-hook",
+      "local_path_expected": "Референсы/",
+      "status": "pending",
+      "notes": "User will upload portrait; placeholder silhouette OK until then"
+    },
+    {
+      "id": "slide-02-hero-phrase",
+      "slide": 2,
+      "type": "typography",
+      "source_has_image": true,
+      "required_for_fidelity": true,
+      "implementation": "generated-in-strip",
+      "status": "ready"
+    },
+    {
+      "id": "slide-02-insight-pill",
+      "slide": 2,
+      "type": "shape",
+      "source_has_image": true,
+      "required_for_fidelity": true,
+      "implementation": "generated-in-strip",
+      "status": "ready"
+    },
+    {
+      "id": "slide-02-eye-icon",
+      "slide": 2,
+      "type": "illustration",
+      "source_has_image": true,
+      "required_for_fidelity": true,
+      "implementation": "generated-in-strip",
+      "status": "ready"
+    },
+    {
+      "id": "slide-03-icon-list",
+      "slide": 3,
+      "type": "illustration",
+      "source_has_image": true,
+      "required_for_fidelity": true,
+      "implementation": "generated-in-strip",
+      "status": "ready"
+    },
+    {
+      "id": "slide-04-goya-mini",
+      "slide": 4,
+      "type": "illustration",
+      "source_has_image": false,
+      "required_for_fidelity": true,
+      "implementation": "generated-in-strip",
+      "status": "ready",
+      "notes": "Line-art etching style miniature, not photographic horror"
+    },
+    {
+      "id": "slide-05-scale-icons",
+      "slide": 5,
+      "type": "illustration",
+      "source_has_image": true,
+      "required_for_fidelity": true,
+      "implementation": "generated-in-strip",
+      "status": "ready"
+    },
+    {
+      "id": "slide-06-portrait",
+      "slide": 6,
+      "type": "photo",
+      "source_has_image": true,
+      "required_for_fidelity": false,
+      "implementation": "runware-i2i",
+      "asset_registry_id": "expert-portrait-cta",
+      "local_path_expected": "Референсы/",
+      "status": "pending"
+    },
+    {
+      "id": "slide-06-cta-pill",
+      "slide": 6,
+      "type": "shape",
+      "source_has_image": true,
+      "required_for_fidelity": true,
+      "implementation": "generated-in-strip",
+      "status": "ready"
+    }
+  ],
+  "continuity_elements": [
+    "cream background #f7f5ef all panels",
+    "green accent rule motif",
+    "Inter pagination N/6",
+    "rounded pill surfaces #ede8e0"
+  ],
+  "blockers": []
+}

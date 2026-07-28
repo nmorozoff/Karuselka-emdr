@@ -1,0 +1,53 @@
+{
+  "registry_version": "1",
+  "generation_pipeline": "runware_strip_6x45",
+  "assets": [
+    {
+      "id": "expert-portrait-hook",
+      "type": "photo",
+      "role": "identity",
+      "slide": 1,
+      "expected_path": "Референсы/",
+      "glob_pattern": "Референсы/*.{jpg,jpeg,png,webp}",
+      "local_path": null,
+      "status": "pending_user_upload",
+      "runware_i2i": true,
+      "notes": "Portrait for slide-01 right side. Not a blocker — use neutral silhouette until uploaded."
+    },
+    {
+      "id": "expert-portrait-cta",
+      "type": "photo",
+      "role": "identity",
+      "slide": 6,
+      "expected_path": "Референсы/",
+      "glob_pattern": "Референсы/*.{jpg,jpeg,png,webp}",
+      "local_path": null,
+      "status": "pending_user_upload",
+      "runware_i2i": true,
+      "notes": "Portrait for slide-06 left side. Same folder as hook."
+    },
+    {
+      "id": "reference-strip-style",
+      "type": "reference",
+      "role": "style_anchor",
+      "local_path": "carusel-memory/research/competitor-decompose/DbFiu0pCp2k/media/slide-02.jpg",
+      "status": "ready",
+      "notes": "Composition orient img_index=2"
+    },
+    {
+      "id": "reference-hook",
+      "type": "reference",
+      "role": "layout_anchor",
+      "local_path": "carusel-memory/research/competitor-decompose/DbFiu0pCp2k/media/slide-01.jpg",
+      "status": "ready"
+    },
+    {
+      "id": "reference-cta",
+      "type": "reference",
+      "role": "layout_anchor",
+      "local_path": "carusel-memory/research/competitor-decompose/DbFiu0pCp2k/media/slide-09.jpg",
+      "status": "ready"
+    }
+  ],
+  "blockers": []
+}

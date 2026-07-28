@@ -1,0 +1,35 @@
+{
+  "pair1_rotation": [
+    {
+      "id": "expert-light",
+      "name": "Инфографика с экспертом — светлая",
+      "requires_expert_photo": true,
+      "guide_file": "expert-infographic-light.md",
+      "natasha_style_key": "Инфографика с экспертом — светлая"
+    },
+    {
+      "id": "expert-dark",
+      "name": "Инфографика с экспертом — тёмная",
+      "requires_expert_photo": true,
+      "guide_file": "expert-infographic-dark.md",
+      "natasha_style_key": "Инфографика с экспертом — тёмная"
+    },
+    {
+      "id": "storytelling",
+      "name": "Сторителлинг",
+      "requires_expert_photo": false,
+      "guide_file": "storytelling.md",
+      "natasha_style_key": "Сторителлинг"
+    }
+  ],
+  "pair2_fixed": {
+    "id": "minimalism",
+    "name": "Минимализм",
+    "requires_expert_photo": true,
+    "guide_file": "minimalism.md",
+    "prompt_status": "ready",
+    "visual_system": "bold-editorial",
+    "slide_count": 6,
+    "master_grid": "3x2"
+  }
+}

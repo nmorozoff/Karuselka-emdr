@@ -1,0 +1,106 @@
+{
+  "series_id": "morozova-depressive-optics-2026",
+  "expert": "Наталья Морозова",
+  "topic": "Депрессивная оптика vs розовые очки",
+  "carousel_family": "slide_numbered_series",
+  "secondary_family": "stat_blocks",
+  "slide_count": 6,
+  "format": {
+    "generation_mode": "runware_strip_6x45",
+    "strip_dimensions_px": { "width": 6480, "height": 1350 },
+    "panel_dimensions_px": { "width": 1080, "height": 1350 },
+    "panel_aspect": "4:5",
+    "grid": { "cols": 6, "rows": 1, "order": "left-to-right" },
+    "gutters_px": 0,
+    "animate_slide": 1
+  },
+  "palette": {
+    "primary": "#3d5c2e",
+    "primary_dark": "#2d4522",
+    "background": "#f7f5ef",
+    "on_background": "#1a1a1a",
+    "on_background_muted": "#5c5c5c",
+    "accent": "#3d5c2e",
+    "surface": "#ede8e0",
+    "outline": "#d4cfc5"
+  },
+  "typography": {
+    "headline": { "family": "Playfair Display", "weights": [700, 800], "cyrillic": true },
+    "body": { "family": "Inter", "weights": [400, 500, 600], "cyrillic": true },
+    "stat": { "family": "Inter", "weight": 800 },
+    "pagination": { "family": "Inter", "weight": 400, "color": "#9a9a9a" },
+    "optional_display": { "family": "Bebas Neue Cyrillic", "use": "hook emphasis only" }
+  },
+  "identity": {
+    "portrait_folder": "Референсы/",
+    "portrait_status": "pending_user_upload",
+    "portrait_slides": [1, 6],
+    "runware_i2i": true,
+    "blocker_if_missing": false
+  },
+  "narrative_arc": ["hook", "pain", "insight", "proof", "save", "cta"],
+  "reference": {
+    "url": "https://www.instagram.com/p/DbFiu0pCp2k/",
+    "author": "@yura.muradyan",
+    "composition_orient_slide": 2
+  },
+  "prompt_hints": {
+    "reference_role": "Editorial infographic carousel by @yura.muradyan: cream background, bold hierarchy, stat blocks, icon lists, expert portrait on hook/CTA. Adapt layout to 6-panel horizontal strip 4:5, brand Natalia Morozova EMDR.",
+    "preserve": [
+      "matte cream #f7f5ef background every panel",
+      "slide-02 layout on panel 2: headline, green rule, hero phrase, insight pill",
+      "N/M pagination top-right",
+      "line-art icons in light circles",
+      "rounded surface pills for insights and CTA",
+      "left-aligned editorial spacing 8% margins",
+      "calm premium psychology tone"
+    ],
+    "change": [
+      "orange → #3d5c2e green accent",
+      "Playfair headlines + Inter body",
+      "topic: depressive optics, Goya metaphor, EMDR coexistence",
+      "6 slides not 9",
+      "CTA: free 30min trial Telegram @natalyamorozovabot"
+    ],
+    "do_not_borrow": [
+      "yura.muradyan face",
+      "ZOH PRADA VCIOM text",
+      "orange primary palette",
+      "happy stock people",
+      "red anxiety banners"
+    ],
+    "typography_rules": [
+      "verbatim Russian text only from panel plan — no extra words",
+      "Playfair Display for headlines, Inter for body and pagination",
+      "ALL CAPS for main hook lines; sentence case for empathetic subcopy",
+      "max ~120 visible characters per panel",
+      "quoted exact strings from CAROUSEL_SLIDE_BLUEPRINTS.json"
+    ],
+    "grid_rules": [
+      "single horizontal strip 6480×1350",
+      "6 equal panels 1080×1350 aspect 4:5",
+      "left to right slide 01-06",
+      "zero gutters full bleed per cell",
+      "each panel self-contained composition",
+      "8% safe margin from panel edges"
+    ],
+    "negative_constraints": [
+      "no 3x3 grid",
+      "no 9 panels",
+      "no orange accent",
+      "no competitor text",
+      "no watermark",
+      "no neon",
+      "no dense paragraphs on image",
+      "no wrong slide order"
+    ],
+    "per_panel_scene_hints": {
+      "01": "Hook: left text 'Депрессивная оптика' + green 'видит правду', accent rule, optional expert portrait right third on cream — motion-safe",
+      "02": "COMPOSITION ORIENT ref slide-02: '1/6' top-right, headline 'ПРАВДА ДЕПРЕССИВНОГО ВЗГЛЯДА', green rule, large green key phrase left 'Будущее непредсказуемо', empathy caption right, bottom pill with eye icon",
+      "03": "Number '01' green, title about brain illusionist, icon list: postcard, floating house, dopamine — soft metaphor illustrations line-art",
+      "04": "Goya etching style miniature + headline coexist not repaint, three X-icon bullets: no forced positivity, EMDR path, truth without paralysis",
+      "05": "Four-row scale: Goya / postcards / infatuation / middle — icon per row, micro-moments tea battery person icons bottom",
+      "06": "Portrait left third Natalia, right: 'Пробная сессия', green rule, '30 мин бесплатно онлайн', CTA pill Telegram bio arrow"
+    }
+  }
+}

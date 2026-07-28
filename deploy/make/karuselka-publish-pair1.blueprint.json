@@ -1,0 +1,554 @@
+{
+    "flow": [
+        {
+            "id": 1,
+            "mapper": {
+                "base": "appQTNsDMuodYyp34",
+                "sort": [
+                    {
+                        "field": "Name"
+                    },
+                    {
+                        "field": "Описание карусели"
+                    }
+                ],
+                "view": "viwfyXtrUfA10JJah",
+                "table": "tblFWCmLCXLrOdKut",
+                "fields": [
+                    "Name",
+                    "Описание карусели",
+                    "TikTok заголовок",
+                    "TikTok описание"
+                ],
+                "maxRecords": "1",
+                "useColumnId": false
+            },
+            "module": "airtable:ActionSearchRecords",
+            "version": 3,
+            "metadata": {
+                "designer": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "parameters": {
+                "__IMTCONN__": 13909814
+            }
+        },
+        {
+            "id": 29,
+            "mapper": {
+                "name": "record_id",
+                "scope": "roundtrip",
+                "value": "{{1.id}}"
+            },
+            "module": "util:SetVariable2",
+            "version": 1,
+            "metadata": {
+                "designer": {
+                    "x": 250,
+                    "y": 0,
+                    "name": "ID строки Airtable (для удаления)"
+                }
+            },
+            "parameters": {}
+        },
+        {
+            "id": 2,
+            "mapper": {
+                "base": "appQTNsDMuodYyp34",
+                "table": "tblfLD5ET7vvp1raT",
+                "fields": [
+                    "Track Name",
+                    "Audio Path",
+                    "Audio Start",
+                    "Audio End",
+                    "Reuse Audio Segment"
+                ],
+                "formula": "{Active}=1",
+                "useColumnId": false
+            },
+            "module": "airtable:ActionSearchRecords",
+            "version": 3,
+            "metadata": {
+                "designer": {
+                    "x": -10,
+                    "y": 398
+                }
+            },
+            "parameters": {
+                "__IMTCONN__": 13909814
+            }
+        },
+        {
+            "id": 15,
+            "mapper": {
+                "Audio End": "{{2.`Audio End`}}",
+                "Audio Path": "{{2.`Audio Path`}}",
+                "Track Name": "{{2.`Track Name`}}",
+                "Audio Start": "{{2.`Audio Start`}}",
+                "Reuse Audio Segment": "{{2.`Reuse Audio Segment`}}"
+            },
+            "module": "builtin:BasicAggregator",
+            "version": 1,
+            "metadata": {
+                "designer": {
+                    "x": -12,
+                    "y": 847
+                }
+            },
+            "parameters": {
+                "feeder": 2
+            }
+        },
+        {
+            "id": 16,
+            "mapper": {
+                "name": "track",
+                "scope": "roundtrip",
+                "value": "{{first(shuffle(15.array))}}"
+            },
+            "module": "util:SetVariable2",
+            "version": 1,
+            "metadata": {
+                "designer": {
+                    "x": 439,
+                    "y": 858
+                }
+            },
+            "parameters": {}
+        },
+        {
+            "id": 3,
+            "mapper": {
+                "list": "file",
+                "path": "/Content_Plan/{{1.Name}}",
+                "limit": "50",
+                "recursive": false,
+                "downloadable": false
+            },
+            "module": "dropbox:listAllFilesSubfoldersInFolder",
+            "version": 5,
+            "metadata": {
+                "designer": {
+                    "x": 925,
+                    "y": 857
+                }
+            },
+            "parameters": {
+                "__IMTCONN__": 13909648
+            }
+        },
+        {
+            "id": 4,
+            "mapper": {
+                "name": "{{3.name}}",
+                "path_lower": "{{3.path_lower}}"
+            },
+            "module": "builtin:BasicAggregator",
+            "version": 1,
+            "metadata": {
+                "designer": {
+                    "x": 921,
+                    "y": 400
+                }
+            },
+            "parameters": {
+                "feeder": 3
+            }
+        },
+        {
+            "id": 5,
+            "mapper": {
+                "array": "{{sort(4.array; \"asc\"; \"name\")}}"
+            },
+            "module": "builtin:BasicFeeder",
+            "version": 1,
+            "metadata": {
+                "designer": {
+                    "x": 926,
+                    "y": -3
+                }
+            },
+            "parameters": {}
+        },
+        {
+            "id": 6,
+            "filter": {
+                "name": "только slide",
+                "conditions": [
+                    [
+                        {
+                            "a": "{{5.name}}",
+                            "b": "slide-",
+                            "o": "text:contain"
+                        }
+                    ]
+                ]
+            },
+            "mapper": {
+                "path_lower": "{{5.path_lower}}"
+            },
+            "module": "builtin:BasicAggregator",
+            "version": 1,
+            "metadata": {
+                "designer": {
+                    "x": 1418,
+                    "y": 2,
+                    "name": "Собрать Dropbox paths (slide-*)"
+                }
+            },
+            "parameters": {
+                "feeder": 5
+            }
+        },
+        {
+            "id": 20,
+            "filter": {
+                "name": "ровно 7 слайдов",
+                "conditions": [
+                    [
+                        {
+                            "a": "{{length(6.array)}}",
+                            "b": "7",
+                            "o": "number:equal"
+                        },
+                        {
+                            "a": "{{1.Name}}",
+                            "b": "",
+                            "o": "text:notequal"
+                        }
+                    ]
+                ]
+            },
+            "mapper": {
+                "audio_end": "{{16.track.`Audio End`}}",
+                "audio_start": "{{16.track.`Audio Start`}}",
+                "tiktok_title": "{{1.`TikTok заголовок`}}",
+                "carousel_name": "{{1.Name}}",
+                "instagram_caption": "{{1.`Описание карусели`}}",
+                "dropbox_audio_path": "{{16.track.`Audio Path`}}",
+                "tiktok_description": "{{1.`TikTok описание`}}",
+                "dropbox_image_paths": "{{map(6.array; \"path_lower\")}}",
+                "reuse_audio_segment": "{{16.track.`Reuse Audio Segment`}}"
+            },
+            "module": "json:CreateJSON",
+            "version": 1,
+            "metadata": {
+                "designer": {
+                    "x": 1642,
+                    "y": -120,
+                    "name": "⚠️ JSON для Cloud Run — НЕ удалять"
+                },
+                "parameters": [
+                    {
+                        "name": "type",
+                        "type": "udt",
+                        "label": "Data structure",
+                        "required": true
+                    },
+                    {
+                        "name": "space",
+                        "type": "select",
+                        "label": "Indentation",
+                        "validate": {
+                            "enum": [
+                                "tab",
+                                "2",
+                                "4"
+                            ]
+                        }
+                    }
+                ]
+            },
+            "parameters": {
+                "type": 574124,
+                "space": ""
+            }
+        },
+        {
+            "id": 7,
+            "filter": {
+                "name": "Cloud Run только при 7 слайдах",
+                "conditions": [
+                    [
+                        {
+                            "a": "{{length(6.array)}}",
+                            "b": "7",
+                            "o": "number:equal"
+                        }
+                    ]
+                ]
+            },
+            "mapper": {
+                "ca": "",
+                "qs": [],
+                "url": "https://ai-carousel-renderer-861393245289.europe-west1.run.app/generate-carousel",
+                "data": "{{20.json}}",
+                "gzip": true,
+                "method": "post",
+                "headers": [
+                    {
+                        "name": "Accept",
+                        "value": "application/json"
+                    },
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "name": "X-API-Key",
+                        "value": "YOUR_CLOUD_RUN_SERVICE_API_KEY"
+                    }
+                ],
+                "timeout": "300",
+                "useMtls": false,
+                "authPass": "",
+                "authUser": "",
+                "bodyType": "raw",
+                "contentType": "application/json",
+                "serializeUrl": false,
+                "shareCookies": false,
+                "parseResponse": true,
+                "followRedirect": true,
+                "useQuerystring": false,
+                "followAllRedirects": false,
+                "rejectUnauthorized": true
+            },
+            "module": "http:ActionSendData",
+            "version": 3,
+            "metadata": {
+                "designer": {
+                    "x": 1894,
+                    "y": -1,
+                    "name": "⚠️ data ТОЛЬКО {{20.json}} — не менять"
+                },
+                "parameters": [
+                    {
+                        "name": "handleErrors",
+                        "type": "boolean",
+                        "label": "Evaluate all states as errors (except for 2xx and 3xx )",
+                        "required": true
+                    },
+                    {
+                        "name": "useNewZLibDeCompress",
+                        "type": "hidden"
+                    }
+                ]
+            },
+            "parameters": {
+                "handleErrors": true,
+                "useNewZLibDeCompress": true
+            }
+        },
+        {
+            "id": 14,
+            "mapper": {
+                "ca": "",
+                "qs": [],
+                "url": "https://zernio.com/api/v1/posts",
+                "data": "{{7.data.instagram_zernio_post_json}}",
+                "gzip": true,
+                "method": "post",
+                "headers": [
+                    {
+                        "name": "Accept",
+                        "value": "application/json"
+                    },
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "name": "Authorization",
+                        "value": "Bearer YOUR_ZERNIO_API_KEY"
+                    }
+                ],
+                "timeout": "300",
+                "useMtls": false,
+                "authPass": "",
+                "authUser": "",
+                "bodyType": "raw",
+                "contentType": "application/json",
+                "serializeUrl": false,
+                "shareCookies": false,
+                "parseResponse": true,
+                "followRedirect": true,
+                "useQuerystring": false,
+                "followAllRedirects": false,
+                "rejectUnauthorized": true
+            },
+            "module": "http:ActionSendData",
+            "version": 3,
+            "metadata": {
+                "designer": {
+                    "x": 2871,
+                    "y": -14,
+                    "name": "Instagram Zernio — видео-карусель"
+                },
+                "parameters": [
+                    {
+                        "name": "handleErrors",
+                        "type": "boolean",
+                        "label": "Evaluate all states as errors (except for 2xx and 3xx )",
+                        "required": true
+                    },
+                    {
+                        "name": "useNewZLibDeCompress",
+                        "type": "hidden"
+                    }
+                ]
+            },
+            "parameters": {
+                "handleErrors": true,
+                "useNewZLibDeCompress": true
+            }
+        },
+        {
+            "id": 17,
+            "mapper": {
+                "ca": "",
+                "qs": [],
+                "url": "https://zernio.com/api/v1/posts",
+                "data": "{{7.data.tiktok_zernio_post_json}}",
+                "gzip": true,
+                "method": "post",
+                "headers": [
+                    {
+                        "name": "Accept",
+                        "value": "application/json"
+                    },
+                    {
+                        "name": "Content-Type",
+                        "value": "application/json"
+                    },
+                    {
+                        "name": "Authorization",
+                        "value": "Bearer YOUR_ZERNIO_API_KEY"
+                    }
+                ],
+                "timeout": "300",
+                "useMtls": false,
+                "authPass": "",
+                "authUser": "",
+                "bodyType": "raw",
+                "contentType": "application/json",
+                "serializeUrl": false,
+                "shareCookies": false,
+                "parseResponse": true,
+                "followRedirect": true,
+                "useQuerystring": false,
+                "followAllRedirects": false,
+                "rejectUnauthorized": true
+            },
+            "module": "http:ActionSendData",
+            "version": 3,
+            "metadata": {
+                "designer": {
+                    "x": 2903,
+                    "y": 290,
+                    "name": "TikTok Zernio — body из Cloud Run"
+                },
+                "parameters": [
+                    {
+                        "name": "handleErrors",
+                        "type": "boolean",
+                        "label": "Evaluate all states as errors (except for 2xx and 3xx )",
+                        "required": true
+                    },
+                    {
+                        "name": "useNewZLibDeCompress",
+                        "type": "hidden"
+                    }
+                ]
+            },
+            "parameters": {
+                "handleErrors": true,
+                "useNewZLibDeCompress": true
+            }
+        },
+        {
+            "id": 27,
+            "filter": {
+                "name": "после успешного рендера",
+                "conditions": [
+                    [
+                        {
+                            "a": "{{7.data.status}}",
+                            "b": "success",
+                            "o": "text:equal"
+                        }
+                    ]
+                ]
+            },
+            "mapper": {
+                "path": "/Content_Plan/{{1.Name}}"
+            },
+            "module": "dropbox:deleteFile",
+            "version": 5,
+            "metadata": {
+                "designer": {
+                    "x": 3300,
+                    "y": 876,
+                    "name": "Удалить папку слайдов Dropbox"
+                }
+            },
+            "parameters": {
+                "__IMTCONN__": 13909648
+            }
+        },
+        {
+            "id": 28,
+            "filter": {
+                "name": "после успешного рендера",
+                "conditions": [
+                    [
+                        {
+                            "a": "{{7.data.status}}",
+                            "b": "success",
+                            "o": "text:equal"
+                        }
+                    ]
+                ]
+            },
+            "mapper": {
+                "base": "appQTNsDMuodYyp34",
+                "table": "tblFWCmLCXLrOdKut",
+                "id": "{{1.id}}",
+                "useColumnId": false
+            },
+            "module": "airtable:ActionDeleteRecord",
+            "version": 3,
+            "metadata": {
+                "designer": {
+                    "x": 3600,
+                    "y": 876,
+                    "name": "Удалить строку Airtable"
+                }
+            },
+            "parameters": {
+                "__IMTCONN__": 13909814
+            }
+        }
+    ],
+    "name": "Karuselka Publish Pair1",
+    "metadata": {
+        "instant": false,
+        "version": 1,
+        "designer": {
+            "orphans": []
+        },
+        "scenario": {
+            "dlq": false,
+            "slots": null,
+            "dataloss": false,
+            "maxErrors": 3,
+            "autoCommit": true,
+            "roundtrips": 1,
+            "sequential": false,
+            "confidential": false,
+            "freshVariables": false,
+            "autoCommitTriggerLast": true
+        }
+    }
+}
