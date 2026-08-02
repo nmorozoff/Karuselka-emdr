@@ -20,8 +20,15 @@ WORKER_API_KEY=<any> PYTHONPATH="deploy/cloud-worker:scripts/lib" .venv/bin/uvic
 ### CLI stages (one-off scripts in `scripts/`)
 Run with `.venv/bin/python scripts/<name>.py --help`. Minimal end-to-end product path: `competitor_decompose.py` → `runware-carousel-gen.py` → `export_publish_bundle.py` → `publish_worker.py`. All of these hit external APIs and need secrets to do real work.
 
-### Secrets (why full end-to-end can't run in the cloud VM by default)
-Every real pipeline action depends on external API secrets. Locally these are loaded from `carusel-memory/*.env.local` dotenv files (see `carusel-memory/SECRETS.md`); with `KARUSELKA_RUNTIME=cloud` they must come from real environment variables. Required services: Runware, Kimi/Moonshot, Apify, Dropbox (OAuth trio), Airtable, Zernio, Telegram, an external Cloud Run renderer, and the `mcp-kv` AI metadata cleaner. Add these as Cursor Secrets to exercise the full publish flow. Without them you can still verify the service (`/health`, auth) and the pure-logic libs (e.g. `scripts/lib/tiktok_caption_split.py`).
+### Secrets (needed for full end-to-end)
+Every real pipeline action depends on external API secrets. Locally these are loaded from `carusel-memory/*.env.local` dotenv files (see `carusel-memory/SECRETS.md`); with `KARUSELKA_RUNTIME=cloud` (`scripts/lib/publish_config.py` `load_runtime_env`) they must come from real environment variables. Required services: Runware, Kimi/Moonshot, Apify, Dropbox (OAuth trio `DROPBOX_APP_KEY`/`_APP_SECRET`/`_REFRESH_TOKEN`, or a single `DROPBOX_ACCESS_TOKEN`), Airtable, Zernio, Telegram, an external Cloud Run renderer, and the `mcp-kv` AI metadata cleaner. When these are added as Cursor Secrets the publish worker runs end-to-end (verified via `publish_worker.py --dry-run` and `POST /run?dry_run=true`). Without them you can still verify `/health`, auth, and the pure-logic libs (e.g. `scripts/lib/tiktok_caption_split.py`).
+
+### Cloud-oriented env vars vs local paths (non-obvious gotcha)
+This environment sets `KARUSELKA_RUNTIME=cloud`, `WORKER_STATE_BACKEND=dropbox`, and path vars like `ACCOUNTS_PAIRS_PATH`, `DROPBOX_CONTENT_PLAN_ROOT`, `AIRTABLE_TRACKS_TABLE_ID` as **environment variables** — they target the Cloud Run/Docker layout (`ACCOUNTS_PAIRS_PATH` points at the in-container `/app/config` path, per `deploy/cloud-worker/Dockerfile`), which does **not** exist on the dev VM. For a local run, point `ACCOUNTS_PAIRS_PATH` at the repo copy, e.g.:
+```bash
+ACCOUNTS_PAIRS_PATH="$PWD/carusel-memory/publish/accounts-pairs.json" .venv/bin/python scripts/publish_worker.py --pair pair1 --limit 1 --dry-run
+```
+Only `pair1` is fully configured in `carusel-memory/publish/accounts-pairs.json`; `pair2` still has `FILL_ME` fields. `POST /run` reads `WORKER_API_KEY` from the env, so send the same value in the `X-Worker-Key` header. Always test with `--dry-run` / `dry_run=true` first — a non-dry run publishes live to Instagram/TikTok via Zernio.
 
 ### Lint / test
 There is **no configured linter and no test framework** in this repo (`scripts/test_publish_from_queue.py` is a manual live-API harness, not an automated test). Use `.venv/bin/python -m py_compile scripts/*.py scripts/lib/*.py deploy/cloud-worker/main.py` as the syntax/lint gate.
